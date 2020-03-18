@@ -1,0 +1,31 @@
+{
+  "name": "cod-19-data-frame",
+  "version": "1.0.0",
+  "description": "To save data frames of (https://www.bing.com/covid/data)",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathan-sh/cod-19-data-frame.git"
+  },
+  "keywords": [
+    "cod19",
+    "cod-19",
+    "cod19-data",
+    "cod-19-data"
+  ],
+  "author": "jonathan-sh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathan-sh/cod-19-data-frame/issues"
+  },
+  "homepage": "https://github.com/jonathan-sh/cod-19-data-frame#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "mongodb": "^3.5.5",
+    "node-cron": "^2.0.3",
+    "pusher": "^3.0.0"
+  }
+}

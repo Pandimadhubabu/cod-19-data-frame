@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+  <title>Pusher Test</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/json-formatter-js@2.3.4/dist/json-formatter.umd.min.js"></script>
+    <script src="https://js.pusher.com/5.1/pusher.min.js"></script>  
+  
+</head>
+<body>
+  <h1>Pusher Test</h1>
+  <div id="json">
+
+  </div>
+</body>
+<script>
+    Pusher.logToConsole = true;
+
+    let pusher = new Pusher('9bd67bf110a3705246b7', { cluster: 'us2',  forceTLS: true });
+
+    let channel = pusher.subscribe('cod-19');
+    channel.bind('update', (data) =>
+    {
+        target = `#json`;
+        const opstions = 
+        { 
+            hoverPreviewEnabled: true,
+            animateOpen: true,
+            animateClose: true,
+            useToJSON: true
+        };
+        const formatter = new JSONFormatter(json, 1, opstions);
+        $(target).empty();
+        $(target).append(formatter.render());
+    });
+</script>
