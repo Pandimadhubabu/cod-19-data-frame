@@ -20,16 +20,16 @@
     let channel = pusher.subscribe('cod-19');
     channel.bind('update', (data) =>
     {
-        target = `#json`;
-        const opstions = 
-        { 
-            hoverPreviewEnabled: true,
-            animateOpen: true,
-            animateClose: true,
-            useToJSON: true
-        };
-        const formatter = new JSONFormatter(json, 1, opstions);
-        $(target).empty();
-        $(target).append(formatter.render());
+      target = `#json`;
+      const opstions = 
+      { 
+          hoverPreviewEnabled: true,
+          animateOpen: true,
+          animateClose: true,
+          useToJSON: true
+      };
+      const formatter = new JSONFormatter(data, 1, opstions);
+      $(target).empty();
+      $(target).append(formatter.render());
     });
 </script>
