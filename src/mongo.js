@@ -11,4 +11,16 @@ const saveFrame = async (frame) =>
     return saved;
 };
 
-module.exports = saveFrame;
+const findAll = async (frame) =>
+{
+    const client = await MongoClient.connect(uri, options);
+    const db = client.db('cod-19');
+    const collection =  db.collection('frames');
+    return new Promise((resolve) =>
+    {
+        collection.find().toArray((e, f) => (e)? resolve([]) : resolve(f));
+    });
+};
+
+
+module.exports = { saveFrame, findAll , };
